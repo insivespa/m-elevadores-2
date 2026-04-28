@@ -72,7 +72,7 @@ export const Icon = styled.span`
 
 export const FaqSection = styled.section`
   .title h1 {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 4.5vw, 2rem);
     text-align: center;
     color: #3962e9;
     margin-top: 0;
@@ -106,6 +106,26 @@ export const FaqSection = styled.section`
   .faq-answer {
     p {
       padding: 0.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .faq-question {
+      font-size: 1.15rem;
+      padding: 0.6rem 0.5rem;
+    }
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    .faq-question {
+      font-size: 1.2rem;
+      padding: 0.75rem 0.5rem;
+    }
+
+    .faq-answer p {
+      font-size: 1rem;
+      padding: 0.75rem 0.5rem;
+      line-height: 1.7;
     }
   }
 
